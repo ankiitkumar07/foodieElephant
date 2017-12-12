@@ -1,0 +1,66 @@
+nav.navbar{
+	opacity:1;
+	animation-delay: 1s;
+}
+
+nav.navbar.animated{
+	opacity: 1;
+}
+
+h1.display-3{
+	opacity: 0;
+}
+h1.display-3.animated{
+	opacity: 1;
+}
+
+.header p, .header a{
+	opacity: 0;
+}
+.header p.animated, .header a.animated{
+	opacity: 1;
+}
+
+.display-4{
+	opacity: 0;
+	animation-delay: 700ms;
+}
+.display-4.animated{
+	opacity: 1;
+}
+
+.cuisine, .category{
+	opacity: 0;
+	animation-delay: 600ms;
+}
+.cuisine.animated, .category.animated{
+	opacity: 1;
+}
+
+.team-member{
+	opacity: 0;
+}
+.team-member.animated{
+	opacity: 1;
+}
+
+.rightEntry, .leftEntry{
+	opacity: 0;
+}
+.rightEntry.animated, .leftEntry.animated{
+	opacity: 1;
+}
+
+.fadeEntry{
+	opacity: 0;
+}
+.fadeEntry.animated{
+	opacity: 1;
+}
+
+.fa-social{
+	opacity: 0;
+}
+.fa-social.animated{
+	opacity: 1;
+}

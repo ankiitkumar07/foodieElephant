@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+
+@import "bootstrap";
+@import "font-awesome";
+@import "home";
+@import "dishes";
+@import "animate";
+@import "animation";
+
+body{
+}
+.scrolled-navbar{
+	background-color: #fffffff2 !important;
+	box-shadow: 1px 1px 8px black;	
+}
+
+.bg-light {
+    background-color: transparent !important;
+}
+.scrolled-navbar>.navbar-brand{
+	color:#383427b5 !important;
+}
+.navbar-light .navbar-brand {
+    color: rgb(255, 255, 255);
+}
+.navbar{
+	height: 80px;
+	transition: all ease-in 240ms;
+}
+.navbar-brand{
+	font-size: 2.56rem;
+	font-weight: 100;
+    font-family: AR Delaney;
+    transition: all ease-in 240ms;
+}
+.nav-link {
+    display: block;
+    padding: 0.9rem 1rem;
+    font-size: 1.056rem;
+}
+
+.link{
+	padding: 0.6rem 1rem;
+	color: white;
+	text-decoration: none;
+	background-color: black;
+	&:hover{
+		color:white;
+		text-decoration: none;
+	}
+}
+
+.login-wrapper{
+	width: 100%;
+	background-image: url(http://villeroyandboch-blog.com/wp-content/uploads/2010/11/VBtablesetting5.jpg);
+	background-size: cover;
+}
+.form-container {
+    background-color: #0000007a;
+    box-shadow: 2px 2px 8px #000000e8;
+    color: white;
+}
+.display-6 {
+    font-size: 2.3rem;
+    font-weight: 100;
+}
+footer{
+    width: 100%;
+    padding: 2rem 0;
+    background-color: #000;
+    color: #fff;
+}

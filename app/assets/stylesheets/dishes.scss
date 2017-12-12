@@ -1,0 +1,79 @@
+// Place all the styles related to the Dishes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dish-header{
+	width: 100%;
+	background-image: url(https://dl.dropboxusercontent.com/s/kgyxoh44f3g4b3r/bannerbg.jpg?dl=0);
+	background-size: cover;
+	overflow: hidden;
+}
+
+.card.dish{
+	height: 12rem;
+	border-radius: none;
+	border: none;
+	&::before{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #08080885;
+		content: '';
+		z-index: 10;
+		opacity: 0;
+		transition: all ease-in 300ms;
+	}
+	&:hover::before{
+		opacity: 1;
+	}
+
+	&:hover .card-title{
+		animation: fadeDown 300ms forwards;
+	}
+	&:hover .card-text{
+		animation: fadeUp 300ms forwards;
+	}
+
+}
+.card-img{
+	height: 100%;
+	border-radius: none;
+	z-index: 9;
+}
+
+.card-title, .card-text{
+	z-index: 11;
+	position: absolute;
+	opacity: 0;
+}
+
+@keyframes fadeDown{
+	0%{
+		opacity: 0.1;
+		top: 0.3rem;
+	}
+	50%{
+		opacity: 0.5;
+		top: 0.8rem;
+	}
+	100%{
+		opacity: 1;
+		top: 1.1rem;
+	}
+}
+@keyframes fadeUp{
+	0%{
+		opacity: 0.1;
+		bottom: 0.3rem;
+	}
+	50%{
+		opacity: 0.5;
+		bottom: 0.8rem;
+	}
+	100%{
+		opacity: 1;
+		bottom: 1.1rem;
+	}
+}

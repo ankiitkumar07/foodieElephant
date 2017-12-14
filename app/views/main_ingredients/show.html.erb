@@ -1,4 +1,80 @@
-<p id="notice"><%= notice %></p>
+<div class="dish-header pt-5">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-3"><%= MainIngredient.find(params[:id]).name %></h1>
+            </div>
+        </div>
+    </div>
+</div>
 
-<%= link_to 'Edit', edit_main_ingredient_path(@main_ingredient) %> |
-<%= link_to 'Back', main_ingredients_path %>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                    <% @dishes.each_slice(1) do |dish| %>
+                        <% dish.each do |dish| %>
+                            <div class="col-6 col-md-4 mb-3">
+                                <div class="card dish bg-dark text-white">
+                                    <img class="card-img" src="https://dl.dropboxusercontent.com/s/kgyxoh44f3g4b3r/bannerbg.jpg?dl=0" alt="Dish Image">
+                                    <div class="card-img-overlay">
+                                        <h4 class="card-title"><%= dish.name %></h4>
+                                        <p class="card-text"><i class="fa fa-rupee"></i><%= dish.price %></p>
+                                        <p class="card-text"><%= dish.category.name %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <% end %>
+                    <% end %>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card" style="width: 20rem;">
+                        <div class="card-header">
+                            Cuisines
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <% @cuisines.each_slice(1) do |c| %>
+                                <% c.each do |c| %>
+                                    <li class="list-group-item"><%= link_to c.name, cuisine_path(c.id) %></li>
+                                <% end %>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="card" style="width: 20rem;">
+                        <div class="card-header">
+                            Categories
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <% @categories.each_slice(1) do |c| %>
+                                <% c.each do |c| %>
+                                    <li class="list-group-item"><%= link_to c.name, category_path(c.id) %></li>
+                                <% end %>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="card" style="width: 20rem;">
+                        <div class="card-header">
+                            Main Ingredients
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <% @mainIng.each_slice(1) do |mi| %>
+                                <% mi.each do |mi| %>
+                                    <li class="list-group-item"><%= link_to mi.name, main_ingredient_path(mi.id) %></li>
+                                <% end %>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

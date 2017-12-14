@@ -1,27 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="dish-header pt-5">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-3">Categories</h1>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h1>Categories</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+              <% @categories.each_slice(1) do |c| %>
+                  <% c.each do |c| %>
+                      <div class="col-12 col-md-4 mb-3">
+                          <div class="card dish bg-dark text-white">
+                              <img class="card-img" src="https://dl.dropboxusercontent.com/s/kgyxoh44f3g4b3r/bannerbg.jpg?dl=0" alt="Dish Image">
+                              <div class="card-img-overlay">
+                                  <h4 class="card-title"><%= c.name %></h4>
+                              </div>
+                          </div>
+                      </div>
+                  <% end %>
+              <% end %>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Category', new_category_path %>

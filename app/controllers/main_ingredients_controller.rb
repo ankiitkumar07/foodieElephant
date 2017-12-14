@@ -10,6 +10,10 @@ class MainIngredientsController < ApplicationController
   # GET /main_ingredients/1
   # GET /main_ingredients/1.json
   def show
+    @dishes = Dish.where(:main_ingredient_id => params[:id])
+    @cuisines = Cuisine.all
+    @categories = Category.all 
+    @mainIng = MainIngredient.all
   end
 
   # GET /main_ingredients/new

@@ -10,6 +10,10 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @dishes = Dish.where(:category_id => params[:id])
+    @cuisines = Cuisine.all
+    @categories = Category.all 
+    @mainIng = MainIngredient.all
   end
 
   # GET /categories/new

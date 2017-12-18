@@ -10,7 +10,7 @@ class MainIngredientsController < ApplicationController
   # GET /main_ingredients/1
   # GET /main_ingredients/1.json
   def show
-    @dishes = Dish.where(:main_ingredient_id => params[:id])
+    @dishes = Dish.where(:main_ingredient_id => @main_ingredient.id)
     @cuisines = Cuisine.all
     @categories = Category.all 
     @mainIng = MainIngredient.all
@@ -68,7 +68,7 @@ class MainIngredientsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_main_ingredient
-      @main_ingredient = MainIngredient.find(params[:id])
+      @main_ingredient = MainIngredient.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

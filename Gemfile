@@ -33,6 +33,7 @@ gem 'rails_admin', '~> 1.2'
 gem 'devise', '~> 4.3'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

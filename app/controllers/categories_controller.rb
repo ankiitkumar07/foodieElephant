@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @dishes = Dish.where(:category_id => params[:id])
+    @dishes = Dish.where(:category_id => @category.id)
     @cuisines = Cuisine.all
     @categories = Category.all 
     @mainIng = MainIngredient.all
@@ -68,7 +68,7 @@ class CategoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:id])
+      @category = Category.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

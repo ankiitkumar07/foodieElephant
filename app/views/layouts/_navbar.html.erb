@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
     <%= link_to 'Foodie Elephant', root_path, class: 'navbar-brand' %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navFromLeft" aria-controls="navFromLeft" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navFromLeft">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
                 <%= link_to 'Home', root_path, class: 'nav-link' %>
@@ -17,7 +17,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <% @categories.each_slice(1) do |c| %>
                         <% c.each do |c| %>
-                            <%= link_to c.name, category_path(c.id), class: 'dropdown-item' %>
+                            <%= link_to c.name, category_path(c), class: 'dropdown-item' %>
                         <% end %>
                     <% end %>
                     <div class="dropdown-divider"></div>
@@ -29,7 +29,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <% @cuisines.each_slice(1) do |c| %>
                         <% c.each do |c| %>
-                            <%= link_to c.name, cuisine_path(c.id), class: 'dropdown-item' %>
+                            <%= link_to c.name, cuisine_path(c), class: 'dropdown-item' %>
                         <% end %>
                     <% end %>
                     <div class="dropdown-divider"></div>
@@ -41,7 +41,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <% @mainIng.each_slice(1) do |c| %>
                         <% c.each do |c| %>
-                            <%= link_to c.name, main_ingredient_path(c.id), class: 'dropdown-item' %>
+                            <%= link_to c.name, main_ingredient_path(c), class: 'dropdown-item' %>
                         <% end %>
                     <% end %>
                     <div class="dropdown-divider"></div>

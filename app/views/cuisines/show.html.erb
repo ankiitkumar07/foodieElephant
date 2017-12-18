@@ -2,7 +2,7 @@
     <div class="container pt-5">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="display-3"><%= Cuisine.find(params[:id]).name %></h1>
+                <h1 class="display-3"><%= @cuisine.name %></h1>
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
                         <ul class="list-group list-group-flush">
                             <% @cuisines.each_slice(1) do |c| %>
                                 <% c.each do |c| %>
-                                    <li class="list-group-item"><%= link_to c.name, cuisine_path(c.id) %></li>
+                                    <li class="list-group-item"><%= link_to c.name, cuisine_path(c) %></li>
                                 <% end %>
                             <% end %>
                         </ul>
@@ -53,7 +53,7 @@
                         <ul class="list-group list-group-flush">
                             <% @categories.each_slice(1) do |c| %>
                                 <% c.each do |c| %>
-                                    <li class="list-group-item"><%= link_to c.name, category_path(c.id) %></li>
+                                    <li class="list-group-item"><%= link_to c.name, category_path(c) %></li>
                                 <% end %>
                             <% end %>
                         </ul>
@@ -67,7 +67,7 @@
                         <ul class="list-group list-group-flush">
                             <% @mainIng.each_slice(1) do |mi| %>
                                 <% mi.each do |mi| %>
-                                    <li class="list-group-item"><%= link_to mi.name, main_ingredient_path(mi.id) %></li>
+                                    <li class="list-group-item"><%= link_to mi.name, main_ingredient_path(mi) %></li>
                                 <% end %>
                             <% end %>
                         </ul>

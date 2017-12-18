@@ -147,6 +147,17 @@ section{
     	border-bottom: 1px solid #e3dc34;
     }
 }
+input[type=date]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-outer-spin-button,
+input[type=time]::-webkit-inner-spin-button, 
+input[type=time]::-webkit-outer-spin-button{ 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+#message{
+	resize:none;
+	height:4.3rem;
+}
 .fa-facebook-square{
 	color: #4867aa;
 }

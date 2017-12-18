@@ -34,6 +34,13 @@ $(document).on('turbolinks:load', function(){
 	})
 });
 
+// $(document).on('turbolinks:load', function(){
+// 	$('[data-toggle="slide-collapse"]').on('click', function() {
+// 	    $navMenuCont = $($(this).data('target'));
+// 	    $navMenuCont.animate({'width':'toggle'}, 350);
+// 	});
+// })
+
 function isScrolledIntoView(elem) {
   var TopViewPort = $(window).scrollTop();
   var BotViewPort = TopViewPort + $(window).height();
@@ -50,12 +57,18 @@ $(document).on('turbolinks:load', function(){
 	var fadeInUp = 'animated fadeInUp';
 	var zoomIn = 'animated zoomIn';
 	var fadeInDown = 'animated fadeInDown';
+	var fadeIn = 'animated fadeIn';
 	$('nav.navbar').addClass(slideInDown).one(animationEnd, function(){
 		$('h1.display-3').addClass(fadeInUp).one(animationEnd, function(){
 			$('.header p, .header a').each(function(){
 				$(this).addClass(fadeInUp);
 			});
 		});
+	});
+	$('.card').each(function(){
+		if(isScrolledIntoView(this) === true){
+			$(this).addClass(fadeIn);
+		}
 	});
 	$(window).scroll(function(){
 		$('.display-4').each(function(){

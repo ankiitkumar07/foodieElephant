@@ -22,6 +22,14 @@
 
 body{
 }
+// #navFromLeft{
+// 	position: fixed;
+//     top: 0;
+//     left: 0;
+//     z-index: 1;
+//     width: 280px; /*example + never use min-width with this solution */
+//     height: 100%;
+// }
 .scrolled-navbar{
 	background-color: #fffffff2 !important;
 	box-shadow: 1px 1px 8px black;	
@@ -57,10 +65,19 @@ body{
 	color: white;
 	text-decoration: none;
 	background-color: black;
+	border-radius: 0;
 	&:hover{
 		color:white;
 		text-decoration: none;
 	}
+}
+.card-link{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
 }
 
 .login-wrapper{
@@ -82,4 +99,13 @@ footer{
     padding: 2rem 0;
     background-color: #000;
     color: #fff;
+    & p{
+	    margin: 0;
+	    color: #ffffffa6;
+	    letter-spacing: 7px;
+	    text-align: center;
+	    font-weight: 100;
+	    font-size: 0.834rem;
+	    user-select: none;
+    }
 }

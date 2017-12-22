@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   def show
     @dishes = Dish.where(:category_id => @category.id)
     @cuisines = Cuisine.all
-    @categories = Category.all 
+    @categories = Category.where.not(:id => @category.id) 
     @mainIng = MainIngredient.all
   end
 

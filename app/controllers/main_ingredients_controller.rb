@@ -13,7 +13,7 @@ class MainIngredientsController < ApplicationController
     @dishes = Dish.where(:main_ingredient_id => @main_ingredient.id)
     @cuisines = Cuisine.all
     @categories = Category.all 
-    @mainIng = MainIngredient.all
+    @mainIng = MainIngredient.where.not(:id => @main_ingredient.id)
   end
 
   # GET /main_ingredients/new

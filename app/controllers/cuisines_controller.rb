@@ -11,7 +11,7 @@ class CuisinesController < ApplicationController
   # GET /cuisines/1.json
   def show
     @dishes = Dish.where(:cuisine_id => @cuisine.id)
-    @cuisines = Cuisine.all
+    @cuisines = Cuisine.where.not(:id => @cuisine.id)
     @categories = Category.all 
     @mainIng = MainIngredient.all
   end

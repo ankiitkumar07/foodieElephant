@@ -9,24 +9,37 @@
 </div>
 
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-12">
-            <div class="row">
-              <% @main_ingredients.each_slice(1) do |mi| %>
-                  <% mi.each do |mi| %>
-                      <div class="col-12 col-md-4 mb-3">
-                          <div class="card dish bg-dark text-white">
-                            <%= link_to '', main_ingredient_path(mi), class: 'card-link' %>
-                              <img class="card-img" src="https://dl.dropboxusercontent.com/s/kgyxoh44f3g4b3r/bannerbg.jpg?dl=0" alt="Dish Image">
-                              <div class="card-img-overlay">
-                                  <h4 class="card-title"><%= mi.name %></h4>
-                              </div>
-                          </div>
-                      </div>
-                  <% end %>
-              <% end %>
+<% if @main_ingredients.any? %>
+   <div class="container mt-5">
+       <div class="row">
+           <div class="col-12">
+               <div class="row">
+                 <% @main_ingredients.each_slice(1) do |mi| %>
+                     <% c.each do |mi| %>
+                         <div class="col-12 col-md-4 mb-3">
+                             <div class="card dish bg-dark text-white">
+                               <%= link_to '', category_path(mi), class: 'card-link' %>
+                                 <img class="card-img" src="https://dl.dropboxusercontent.com/s/kgyxoh44f3g4b3r/bannerbg.jpg?dl=0" alt="Dish Image">
+                                 <div class="card-img-overlay">
+                                     <h4 class="card-title"><%= mi.name %></h4>
+                                 </div>
+                             </div>
+                         </div>
+                     <% end %>
+                 <% end %>
+               </div>
+           </div>
+       </div>
+   </div>
+<% else %>
+   <div class="container mt-5">
+      <div class="row">
+          <div class="col-12 mb-3">
+                <div class="show-error text-center">
+                    <h1 class="display-5">We Are Still Getting It Ready! </h1>
+                    <img src="https://cdn.dribbble.com/users/458522/screenshots/2710195/dribbbler_1x.jpg" alt="no-dishes" class="img-fluid">
+                </div>
             </div>
-        </div>
-    </div>
-</div>
+      </div>
+   </div>
+<% end %>

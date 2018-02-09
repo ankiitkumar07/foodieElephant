@@ -18,11 +18,11 @@
                         <% dish.each do |dish| %>
                             <div class="col-6 col-md-4 mb-3">
                                 <div class="card dish bg-dark text-white">
-                                    <img class="card-img" src="https://dl.dropboxusercontent.com/s/kgyxoh44f3g4b3r/bannerbg.jpg?dl=0" alt="Dish Image">
+                                    <img class="card-img" src="<%= dish.image_path %>" alt="Dish Image">
                                     <div class="card-img-overlay">
                                         <h4 class="card-title"><%= dish.name %></h4>
-                                        <p class="card-text"><i class="fa fa-rupee"></i><%= dish.price %></p>
-                                        <p class="card-text"><%= dish.category.name %></p>
+                                        <!-- <p class="card-text"><i class="fa fa-rupee"></i><%= dish.price %></p> -->
+                                        <p class="card-text"><%= dish.category.name %>, <%= dish.cuisine.name %></p>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-12 mb-4">
+<!--                     <div class="col-12 mb-4">
                         <div class="card" style="width: 20rem;">
                             <div class="card-header">
                                 Main Ingredients
@@ -73,7 +73,7 @@
                                 <% end %>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         <% else %>

@@ -65,21 +65,28 @@ $(document).on('turbolinks:load', function(){
 			});
 		});
 	});
-	$('.card').each(function(){
-		if(isScrolledIntoView(this) === true){
-			$(this).addClass(fadeIn);
-		}
-	});
+	// $('.card').each(function(){
+	// 	if(isScrolledIntoView(this) === true){
+	// 		$(this).addClass(fadeIn);
+	// 	}
+	// });
+	
 	$(window).scroll(function(){
 		$('.display-4').each(function(){
 			if(isScrolledIntoView(this) === true){
 				$(this).addClass(fadeInUp);
 			}
 		});
-
+		
 		$('.cuisine, .category').each(function(){
 			if(isScrolledIntoView(this) === true){
-				$(this).addClass(fadeInDown);
+				$(this).addClass(fadeInDown).one(animationEnd, function(){
+					$('a.link.__animate-link').each(function(){
+						if(isScrolledIntoView(this) === true){
+							$(this).addClass(zoomIn);
+						}
+					})
+				});
 			}
 		});
 
@@ -112,5 +119,11 @@ $(document).on('turbolinks:load', function(){
 				$(this).addClass(zoomIn);
 			}
 		})
+
+		$('.card.dish').each(function(){
+		if(isScrolledIntoView(this) === true){
+			$(this).addClass(fadeInUp);
+		}
+	});
 	});
 });

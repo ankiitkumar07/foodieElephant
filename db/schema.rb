@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114152028) do
+ActiveRecord::Schema.define(version: 20180209072707) do
 
   create_table "abouts", force: :cascade do |t|
     t.text     "about"
@@ -67,8 +67,9 @@ ActiveRecord::Schema.define(version: 20180114152028) do
     t.integer  "category_id"
     t.integer  "cuisine_id"
     t.integer  "main_ingredient_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                                                                                       null: false
+    t.datetime "updated_at",                                                                                       null: false
+    t.string   "image_path",         default: "https://dl.dropboxusercontent.com/s/t7c2qotnnlkgwz5/dish.jpg?dl=0", null: false
     t.index ["category_id"], name: "index_dishes_on_category_id"
     t.index ["cuisine_id"], name: "index_dishes_on_cuisine_id"
     t.index ["main_ingredient_id"], name: "index_dishes_on_main_ingredient_id"

@@ -13,7 +13,12 @@ h1.display-3{
 h1.display-3.animated{
 	opacity: 1;
 }
-
+.__animate-link{
+	opacity: 0;
+}
+.__animate-link.animated{
+	opacity: 1;
+}
 .header p, .header a{
 	opacity: 0;
 }
@@ -26,6 +31,14 @@ h1.display-3.animated{
 	animation-delay: 700ms;
 }
 .display-4.animated{
+	opacity: 1;
+}
+
+.card.dish{
+	opacity: 0;
+}
+
+.card.dish.animated{
 	opacity: 1;
 }
 

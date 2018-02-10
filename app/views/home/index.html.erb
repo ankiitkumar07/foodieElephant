@@ -129,25 +129,7 @@
 		</div>
 		<div class="row justify-content-end m-2 p-5">
 			<div class="col-12 col-md-4">
-				<form action="">
-					<div class="form-group">
-						<input type="text" name="name" placeholder="What should we call you?" class="form-control light-form rightEntry">
-					</div>
-					<div class="form-group">
-						<input type="text" name="seats" placeholder="Booking for..." class="form-control light-form rightEntry">
-					</div>
-					<div class="form-group form-row">
-						<div class="col-6">
-							<input type="date" name="date" class="form-control light-form rightEntry">
-						</div>
-						<div class="col-6">
-							<input type="time" name="time" class="form-control light-form rightEntry">
-						</div>
-					</div>
-					<div class="form-group">
-						  <button type="submit" class="btn link rightEntry">Submit Booking Query</button>
-					</div>
-				</form>
+				<%= render 'bookings/form' %>
 
 				<hr class="rightEntry">
 

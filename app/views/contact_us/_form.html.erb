@@ -1,0 +1,27 @@
+<%= form_for(@contact, :url => contact_us_path) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this @contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="form-group">
+      <%= f.text_field :name, class: 'form-control light-form rightEntry', placeholder: 'Name' %>
+    </div>
+
+  <div class="form-group">
+    <%= f.text_field :email, class: 'form-control rightEntry light-form', placeholder: 'Email' %>
+  </div>
+  <div class="form-group">
+  <%= f.text_area :message, placeholder: 'What do you want to say?', class: 'form-control light-form rightEntry', rows: "3" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

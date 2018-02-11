@@ -1,29 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="login-wrapper">
+  <div class="container py-5">
+<p id="notice d-none"> <%= notice %></p>
+    <div class="row justify-content-center mb-5">
+      <div class="col-8">
+        <h3 class="display-5 mt-5 text-center">Thank You For Booking With Us</h3>
+        <p class="text-center mb-3">We are looking forward to host you a wonderful time with your loved ones.</p>
+        <div class="col-8 ml-5 mb-2">
+          <p>Please confirm the the following details.</p>
+          <div class="row justify-content-left py-3">
+            <div class="col-4">Name</div>
+            <div class="col-4"><%= @booking.name %></div>
+          </div>
+          <div class="row justify-content-left py-3">
+            <div class="col-4">Booking For</div>
+            <div class="col-4"><%= @booking.booking_for %></div>
+          </div>
+          <div class="row justify-content-left py-3">
+            <div class="col-4">When</div>
+            <div class="col-4"><%= @booking.date %> @ <%= @booking.time %></div>
+          </div>
+          <div class="row justify-content-left py-3">
+            <div class="col-4">Phone</div>
+            <div class="col-4"><%= @booking.phone %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-2 text-center">
+        <%= link_to 'Confirm Booking', root_path %>
+      </div>
+      <div class="col-2 text-center">
+        <%= link_to 'Edit Details', edit_booking_path(@booking) %>
+      </div>
+      <div class="col-2 text-center">
+        <%= link_to 'Cancel Booking', booking_path(@booking), method: :delete, data: {confirm: 'Are You Sure!'} %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @booking.name %>
-</p>
 
-<p>
-  <strong>Booking for:</strong>
-  <%= @booking.booking_for %>
-</p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @booking.date %>
-</p>
-
-<p>
-  <strong>Time:</strong>
-  <%= @booking.time %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @booking.phone %>
-</p>
-
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Back', bookings_path %>

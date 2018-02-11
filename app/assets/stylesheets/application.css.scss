@@ -19,6 +19,7 @@
 @import "dishes";
 @import "animate";
 @import "animation";
+@import "bookings";
 
 body{
 }
@@ -70,6 +71,9 @@ body{
 		color:white;
 		text-decoration: none;
 	}
+}
+input.link {
+    border: none;
 }
 .card-link{
     position: absolute;

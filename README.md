@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+This application is developed by <%= link_to 'Ankit Kumar', 'https:www.twitter.com/meankitkumar' %>.
 
-* Ruby version
+Foodie Elephant is a Restaurant based in the city of Bikaner in India.
 
-* System dependencies
+The Application is built using :
 
-* Configuration
+Ruby version : ruby 2.3.3p222 (2016-11-21 revision 56859) [x64-mingw32]
 
-* Database creation
+Rails version : 
 
-* Database initialization
+Database : Sqlite in development env. and PostgreSql for deployement env.
 
-* How to run the test suite
+System dependencies : 
+BootStrap4 
+JQuery3
+Font Awesome 5
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...

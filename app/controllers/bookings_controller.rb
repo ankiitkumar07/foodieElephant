@@ -1,20 +1,16 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:index]
 
   # GET /bookings
   # GET /bookings.json
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all.order("created_at DESC")
   end
 
   # GET /bookings/1
   # GET /bookings/1.json
   def show
-  end
-
-  # GET /bookings/new
-  def new
-    @booking = Booking.new
   end
 
   # GET /bookings/1/edit

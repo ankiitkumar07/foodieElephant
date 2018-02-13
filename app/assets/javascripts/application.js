@@ -71,6 +71,12 @@ $(document).on('turbolinks:load', function(){
 	// 		$(this).addClass(fadeIn);
 	// 	}
 	// });
+
+	$('.card.dish').each(function(){
+		if(isScrolledIntoView(this) === true && $(this).ready()){
+			$(this).addClass(fadeInUp);
+		}
+	})
 	
 	$(window).scroll(function(){
 		$('.display-4').each(function(){

@@ -6,13 +6,13 @@
 
     <div class="collapse navbar-collapse" id="navFromLeft">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="<%= params[:controller] == 'home' ? 'nav-item active' : 'nav-item' %>">
                 <%= link_to 'Home', root_path, class: 'nav-link' %>
             </li>
-            <li class="nav-item">
+            <li class="<%= params[:controller] == 'dishes' ? 'nav-item active' : 'nav-item' %>">
                 <%= link_to 'Menu', dishes_path, class: 'nav-link' %>
             </li>
-            <li class="nav-item dropdown">
+            <li class="<%= params[:controller] == 'categories' ? 'nav-item dropdown active' : 'nav-item dropdown' %>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <% @categories.each_slice(1) do |c| %>
@@ -24,7 +24,7 @@
                     <%= link_to 'All Categories', categories_path, class: 'dropdown-item' %>
                 </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class="<%= params[:controller] == 'cuisines' ? 'nav-item dropdown active' : 'nav-item dropdown' %>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cuisines</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <% @cuisines.each_slice(1) do |c| %>
@@ -48,9 +48,17 @@
                     <%= link_to 'All Ingredients', main_ingredients_path, class: 'dropdown-item' %>
                 </div>
             </li> -->
-            <li class="nav-item">
+            <li class="<%= params[:controller] == 'abouts' ? 'nav-item active' : 'nav-item' %>">
                 <%= link_to 'About Us', abouts_path, class: 'nav-link' %>
             </li>
+            <% if admin_signed_in? %>
+                <li class="<%= params[:controller] == 'contact_us' ? 'nav-item active' : 'nav-item' %>">
+                    <%= link_to 'Messages', contact_us_path, class: 'nav-link' %>
+                </li>
+                <li class="<%= params[:controller] == 'bookings' ? 'nav-item active' : 'nav-item' %>">
+                    <%= link_to 'Bookings', bookings_path, class: 'nav-link' %>
+                </li>
+            <% end %>
         </ul>
     </div>
 </nav>

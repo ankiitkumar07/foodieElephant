@@ -1,10 +1,11 @@
 class ContactUsController < ApplicationController
   before_action :set_contact_u, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:index]
 
   # GET /contact_us
   # GET /contact_us.json
   def index
-    @contact_us = ContactU.all
+    @contact_us = ContactU.all.order("created_at DESC")
   end
 
   # GET /contact_us/1

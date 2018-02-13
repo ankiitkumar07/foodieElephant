@@ -10,25 +10,24 @@
 
 
   <div class="container pt-5">
-    <div class="row justify-content-center">
-      <div class="col-8">
-        <div class="row">
-          <div class="col-1">#</div>
-          <div class="col-3">Name</div>
-          <div class="col-1">Booking For</div>
-          <div class="col-3">Time</div>
-          <div class="col-2">Phone</div>
-        </div>
-        <% @bookings.each do |booking| %>
-          <div class="row">
-            <div class="col-1 __b-rows"><%= booking.id %></div>
-            <div class="col-3 __b-rows"><%= booking.name %></div>
-            <div class="col-1 __b-rows"><%= booking.booking_for %></div>
-            <div class="col-3 __b-rows"><%= booking.date + ' @ ' + booking.time %></div>
-            <div class="col-2 __b-rows"><%= booking.phone %></div>
-          </div>
-        <% end %>
+    <div class="row mb-3">
+      <div class="col-1"><h4>#</h4></div>
+      <div class="col-2"><h4>Name</h4></div>
+      <div class="col-2"><h4>Booking For</h4></div>
+      <div class="col-2"><h4>Time</h4></div>
+      <div class="col-2"><h4>Phone</h4></div>
+      <div class="col-2"><h4>Booking Time</h4></div>
+    </div>
+    <% @bookings.each do |booking| %>
+      <div class="row py-3 __s-row">
+        <div class="col-1"><%= booking.id %></div>
+        <div class="col-2"><%= booking.name %></div>
+        <div class="col-2"><%= booking.booking_for %></div>
+        <div class="col-2"><%= booking.date + ' @ ' + booking.time %></div>
+        <div class="col-2"><%= booking.phone %></div>
+        <div class="col-2"><%= booking.created_at.strftime("%d-%m-%Y") %> <%= booking.created_at.strftime("%H:%M") %></div>
       </div>
+    <% end %>
     </div>
   </div>
 

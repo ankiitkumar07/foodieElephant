@@ -81,15 +81,6 @@
                 <div class="show-error text-center">
                     <h1 class="display-5">We Are Still Getting It Ready! </h1>
                     <img src="https://cdn.dribbble.com/users/458522/screenshots/2710195/dribbbler_1x.jpg" alt="no-dishes" class="img-fluid">
-
-                    <p class="text-left">Meanwhile you can explore here: </p>
-                    <ul class="fa-ul text-left ml-5">
-                        <% @cuisines.each_slice(1) do |c| %>
-                            <% c.each do |c| %>
-                                <li><%= link_to c.name, cuisine_path(c) %></li>
-                            <% end %>
-                        <% end %>
-                    </ul>
                 </div>
             </div>
         <% end %>

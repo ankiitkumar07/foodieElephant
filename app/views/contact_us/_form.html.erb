@@ -1,4 +1,4 @@
-<%= form_for(@contact, :url => contact_us_path) do |f| %>
+<%= form_for(@contact, :url => contact_us_path, :remote => true) do |f| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this @contact from being saved:</h2>
@@ -22,6 +22,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <input type="submit" value="Send Message" name="commit" class="btn link rightEntry">
   </div>
 <% end %>

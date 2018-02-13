@@ -1,31 +1,37 @@
+<div class="dish-header pt-5">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-3">Messages</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Contact Us</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Message</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+  <div class="row">
+    <div class="col-3"><h4>Name</h4></div>
+    <div class="col-4">
+      <h3>Email</h3>
+    </div>
+    <div class="col-3">
+      <h3>Message</h3>
+    </div>
+    <div class="col-2"><h3>Actions</h3></div>
+  </div>
 
-  <tbody>
-    <% @contact_us.each do |contact_u| %>
-      <tr>
-        <td><%= contact_u.name %></td>
-        <td><%= contact_u.email %></td>
-        <td><%= contact_u.message %></td>
-        <td><%= link_to 'Show', contact_u %></td>
-        <td><%= link_to 'Edit', edit_contact_u_path(contact_u) %></td>
-        <td><%= link_to 'Destroy', contact_u, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <% @contact_us.each_slice(1) do |c| %>
+    <% c.each do |c| %>
+      <div class="row py-3 mb-3 __s-row">
+        <div class="col-3"><%= c.name %></div>
+        <div class="col-4"><%= c.email %></div>
+        <div class="col-3"><%= excerpt(c.message, '', radius: 100) %></div>
+        <div class="col-1"><%= link_to 'Open', c %></div>
+        <div class="col-1"><a href="mailto:<%= c.email %>" target="blank">Reply</a></div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Contact U', new_contact_u_path %>
+  <% end %>
+</div>

@@ -17,10 +17,6 @@ class ContactUsController < ApplicationController
     @contact_u = ContactU.new
   end
 
-  # GET /contact_us/1/edit
-  def edit
-  end
-
   # POST /contact_us
   # POST /contact_us.json
   def create
@@ -28,24 +24,8 @@ class ContactUsController < ApplicationController
 
     respond_to do |format|
       if @contact_u.save
-        format.html { redirect_to @contact_u, notice: 'Contact u was successfully created.' }
-        format.json { render :show, status: :created, location: @contact_u }
+        format.js { render 'contact_us/create.js.erb' }
       else
-        format.html { render :new }
-        format.json { render json: @contact_u.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /contact_us/1
-  # PATCH/PUT /contact_us/1.json
-  def update
-    respond_to do |format|
-      if @contact_u.update(contact_u_params)
-        format.html { redirect_to @contact_u, notice: 'Contact u was successfully updated.' }
-        format.json { render :show, status: :ok, location: @contact_u }
-      else
-        format.html { render :edit }
         format.json { render json: @contact_u.errors, status: :unprocessable_entity }
       end
     end

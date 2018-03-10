@@ -40,7 +40,6 @@ var row = $('#dish .row:first');
 
 <% if @dishes.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @dishes %>');
-  $('.infi-scroll').css("opacity",0);
 <% else %>
   $(window).off('scroll');
   $('.pagination').remove();

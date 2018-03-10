@@ -74,7 +74,7 @@ $(document).on('turbolinks:load', function(){
 	// });
 
 	$('.card.dish').each(function(){
-		if(isScrolledIntoView(this) === true && $(this).ready()){
+		if($(this).ready()){
 			$(this).addClass(fadeInUp);
 		}
 	})
@@ -127,11 +127,5 @@ $(document).on('turbolinks:load', function(){
 				$(this).addClass(zoomIn);
 			}
 		})
-
-		$('.card.dish').each(function(){
-		if(isScrolledIntoView(this) === true){
-			$(this).addClass(fadeInUp);
-		}
-	});
 	});
 });

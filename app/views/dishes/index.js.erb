@@ -1,3 +1,5 @@
+
+
 var col, card, img, overlay, h4, p, h4_text, p_text;
 var row = $('#dish .row:first');
 <% @dishes.each_slice(1) do |dish| %>
@@ -37,8 +39,10 @@ var row = $('#dish .row:first');
 
 
 <% if @dishes.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate @posts %>');
+  $('.pagination').replaceWith('<%= j will_paginate @dishes %>');
+  $('.infi-scroll').css("opacity", 0);
 <% else %>
   $(window).off('scroll');
   $('.pagination').remove();
+  $('.infi-scroll').html("<p>Oops! You've Reached the end. Looking for something else? Tell us about it <a href='http:www.foodieelephant.com#contact'>here</a></p>");
 <% end %>

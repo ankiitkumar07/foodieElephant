@@ -1,17 +1,17 @@
+var more_record;
+
 $(document).on('turbolinks:load', function(){
-	
 		$(window).on('scroll', function(){
-			var more_record = $('.pagination a.next_page').attr('href');
-			if(more_record && $(window).scrollTop() > $(document).height() - $(window).height() - 160)
+			more_record = $('.pagination a.next_page').attr('href');
+			if(more_record && $(window).scrollTop() > $(document).height() - $(window).height() - 100)
 			{
 				$('.pagination').html("<p>Loading...</p>");
+				$('.infi-scroll').css("opacity", 1);
 				$.ajax({
 					type: "GET",
 					url: more_record,
 					dataType: 'script',
-					success: function(res){
-						$('.pagination').html("<p>More</p>");
-					},
+					success: function(res){ },
 					error: function(data){
 						console.log("Broken " + data);
 					}

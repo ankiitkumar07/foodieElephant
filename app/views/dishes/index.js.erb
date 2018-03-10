@@ -1,0 +1,44 @@
+var col, card, img, overlay, h4, p, h4_text, p_text;
+var row = $('#dish .row:first');
+<% @dishes.each_slice(1) do |dish| %>
+	<% dish.each do |dish| %>
+		col = document.createElement('div');
+		$(col).addClass('col-6 col-md-4 mb-3');
+		row.append(col);
+
+		card = document.createElement('div');
+		$(card).addClass('card dish bg-dark text-white animated fadeInUp');
+		col.append(card);
+
+		img = document.createElement('img');
+		$(img).addClass('card-img');
+		$(img).attr("src", "<%= dish.image_path %>");
+		$(img).attr("alt", "Dish Image <%= dish.name %>");
+		card.append(img);
+
+		overlay = document.createElement('div');
+		$(overlay).addClass('card-img-overlay');
+		card.append(overlay);
+
+		h4 = document.createElement('h4');
+		$(h4).addClass('card-title');
+		h4_text = document.createTextNode("<%= dish.name %>");
+		h4.appendChild(h4_text);
+		overlay.append(h4);
+
+		p = document.createElement('p');
+		$(p).addClass('card-text');
+		p_text = document.createTextNode('<%= dish.category.name %>' + ', ' + '<%= dish.cuisine.name %>');
+		p.appendChild(p_text);
+		overlay.append(p);
+	<% end %>
+<% end %>
+
+
+
+<% if @dishes.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @posts %>');
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+<% end %>

@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
+//= pagination
 //= require_tree .
 
 

@@ -12,13 +12,13 @@
 <div class="container mt-5">
     <div class="row">
         <% if @dishes.any? %>
-            <div class="col-md-8">
+            <div class="col-md-8" id="dish">
                 <div class="row">
                     <% @dishes.each_slice(1) do |dish| %>
                         <% dish.each do |dish| %>
                             <div class="col-6 col-md-4 mb-3">
                                 <div class="card dish bg-dark text-white">
-                                    <img class="card-img" src="<%= dish.image_path %>" alt="Dish Image">
+                                    <img class="card-img" src="<%= dish.image_path %>" alt="Dish Image <%= dish.name %>">
                                     <div class="card-img-overlay">
                                         <h4 class="card-title"><%= dish.name %></h4>
                                         <!-- # <p class="card-text"><i class="fa fa-rupee"></i><%= dish.price %></p> -->
@@ -28,6 +28,13 @@
                             </div>
                         <% end %>
                     <% end %>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="infi-scroll">
+                            <%= will_paginate %>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">

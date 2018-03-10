@@ -3,10 +3,9 @@ var more_record;
 $(document).on('turbolinks:load', function(){
 		$(window).on('scroll', function(){
 			more_record = $('.pagination a.next_page').attr('href');
-			if(more_record && $(window).scrollTop() > $(document).height() - $(window).height() - 100)
+			if(more_record && ($(window).scrollTop() + $(window).innerHeight()) > ($('.infi-scroll').offset().top + $('.infi-scroll').innerHeight()))
 			{
 				$('.pagination').html("<p>Loading...</p>");
-				$('.infi-scroll').css("opacity", 1);
 				$.ajax({
 					type: "GET",
 					url: more_record,

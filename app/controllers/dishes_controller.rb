@@ -4,7 +4,7 @@ class DishesController < ApplicationController
   # GET /dishes
   # GET /dishes.json
   def index
-    @dishes = Dish.paginate(page: params[:page], per_page: 6)
+    @dishes = Dish.paginate(page: params[:page], per_page: 12)
     @categories = Category.all
     @mainIng = MainIngredient.all
     @cuisines = Cuisine.all
